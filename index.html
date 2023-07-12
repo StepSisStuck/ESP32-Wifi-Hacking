@@ -6,72 +6,34 @@
     <title>Marauder Flipper Zero</title>
 </head>
 <style>
-    /* Set default font family and size */
+/* Set default font family and size */
+/* Set default font family and size */
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #fff;
-}
-
-/* Set background color and padding for the page */
-html, body {
-  height: 100%;
   background-color: #000;
-  padding: 0;
-  margin: 0;
-}
-
-/* Center the content on the page */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-/* Style the header */
-header {
-  background-color: #333;
-  color: #fff;
   padding: 20px;
-  text-align: center;
 }
-
-/* Style the navigation menu */
-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: #555;
-  color: #fff;
-  padding: 10px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
-
-nav a:hover {
-  background-color: #fff;
-  color: #555;
-}
-
-/* Style the main content area */
-main {
+/* Add padding to the video container */
+video {
+  padding: 20px;
   background-color: #222;
-  padding: 20px;
-  margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+/* Style the conclusion section */
+#conclusion {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#conclusion p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 </style>
 <body>
@@ -138,7 +100,7 @@ Common: <a href="https://github.com/brannondorsey/naive-hashcat/releases/downloa
 <p>Great! Now that you have installed all the prerequisites, let&#39;s get started!</p>
 <h2 id="step-0-">Step 0:</h2>
 <p>Navigate to Applications ---&gt; GPIO ---&gt; [ESP32] Wifi Marauder</p>
-<video src="Image%20and%20Video/Recording%202023-07-12%20175619.mp4" controls title="Nev"></video>
+<video src="Image%20and%20Video/Recording%202023-07-12%20175619.mp4" width="640" height="360" controls></video>
 
 <h2 id="step-1-">Step 1:</h2>
 <p><img src="./Image%20and%20Video/Screenshot-20230712-175629.png" alt="Run AP"></p>
@@ -153,12 +115,12 @@ Common: <a href="https://github.com/brannondorsey/naive-hashcat/releases/downloa
 <p>Press on Select and Key in the number beside your SSID. Example: 1</p>
 <h2 id="step-5-">Step 5:</h2>
 <p>Before you press on the Deauth button, change your Sniff to raw, to make sure that you can sniff the handshake.</p>
-<video src="Image%20and%20Video/RAW%20and%20Deauther.mp4" controls title="Title"></video>
+<video src="Image%20and%20Video/RAW%20and%20Deauther.mp4" width="640" height="360" controls></video>
 
 <h2 id="step-6-">Step 6:</h2>
 <p>Get your pcap file from the flipper zero and open it with Wireshark.</p>
 <p>SD Card ---&gt; app_data ----&gt; marauder ---&gt; pcap ---&gt; Sniffraw_1.pcap</p>
-<video src="Image%20and%20Video/Recording75619.mp4" controls title="Title"></video>
+<video src="Image%20and%20Video/Recording75619.mp4" width="640" height="360" controls></video>
 
 <h2 id="step-7-">Step 7:</h2>
 <p>Go click on the .pcap file and it will open up Wireshark. </p>
@@ -166,12 +128,12 @@ Common: <a href="https://github.com/brannondorsey/naive-hashcat/releases/downloa
 <p>You should have something like this: </p>
 <pre><code><span class="hljs-type">key</span>(Message <span class="hljs-number">1</span> of <span class="hljs-number">4</span>), <span class="hljs-type">key</span>(Message <span class="hljs-number">2</span> of <span class="hljs-number">4</span>),
 <span class="hljs-type">key</span>(Message <span class="hljs-number">3</span> of <span class="hljs-number">4</span>) and <span class="hljs-type">key</span>(Message <span class="hljs-number">4</span> of <span class="hljs-number">4</span>)
-</code></pre><video src="Image%20and%20Video/Eapol%20works.mp4" controls title="Title"></video>
+</code></pre><video src="Image%20and%20Video/Eapol%20works.mp4" width="640" height="360" controls></video>
 
 <h2 id="step-8-">Step 8:</h2>
 <p><a href="https://hashcat.net/cap2hashcat/">Go to this website and upload your .pcap file</a></p>
 <p>And download the .hc22000 file.</p>
-<video src="Image%20and%20Video/Use%20Hashcat%20website.mp4" controls title="Title"></video>
+<video src="Image%20and%20Video/Use%20Hashcat%20website.mp4" width="640" height="360" controls></video>
 
 <h2 id="step-9-">Step 9:</h2>
 <p>Drag the .hc22000 file into the hashcat folder.</p>
@@ -185,7 +147,7 @@ Common: <a href="https://github.com/brannondorsey/naive-hashcat/releases/downloa
 <pre><code class="lang-bash">hashcat -m <span class="hljs-number">22000</span> <span class="hljs-number">112313212</span><span class="hljs-selector-class">.hc22000</span> cracked<span class="hljs-selector-class">.txt</span><span class="hljs-selector-class">.gz</span>
 </code></pre>
 <p>Your password will be cracked in a few seconds or minutes depending on your computer and the password.</p>
-<video src="Image%20and%20Video/Password%20Cracked.mp4" controls title="Title"></video>
+<video src="Image%20and%20Video/Password%20Cracked.mp4" width="640" height="360" controls></video>
 
 
 <h1 id="conclusion">Conclusion</h1>
