@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello-there-">Hello there!</h1>
+<p>This documentation is on how to crack a WPS/WPA2 encrypted wifi password using Flipper Zero WiFi-Devemopment board.</p>
+<p>Alright let&#39;s get started!</p>
+<h1 id="table-of-contents-">Table of Contents:</h1>
+<ul>
+<li><a href="#hello-there">Hello there!</a></li>
+<li><a href="#table-of-contents">Table of Contents:</a></li>
+<li><a href="#install-the-prerequisites">Install the prerequisites</a><ul>
+<li><a href="#install-the-marauder-flash">Install the Marauder Flash</a></li>
+<li><a href="#install-wireshark">Install WireShark</a></li>
+<li><a href="#install-hashcat">Install Hashcat</a></li>
+<li><a href="#install-7zip">Install 7zip</a></li>
+<li><a href="#install-python-396">Install Python 3.9.6</a></li>
+<li><a href="#install-the-crack-passwords">Install the crack passwords</a></li>
+<li><a href="#what-i-used-for-this-tutorial">What I Used: For this tutorial</a></li>
+</ul>
+</li>
+<li><a href="#execution">Execution</a><ul>
+<li><a href="#step-0">Step 0:</a></li>
+<li><a href="#step-1">Step 1:</a></li>
+<li><a href="#step-2">Step 2:</a></li>
+<li><a href="#step-3">Step 3:</a></li>
+<li><a href="#step-4">Step 4:</a></li>
+<li><a href="#step-5">Step 5:</a></li>
+<li><a href="#step-6">Step 6:</a></li>
+<li><a href="#step-7">Step 7:</a></li>
+<li><a href="#step-8">Step 8:</a></li>
+<li><a href="#step-9">Step 9:</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<hr>
+<h1 id="install-the-prerequisites">Install the prerequisites</h1>
+<h2 id="install-the-marauder-flash">Install the Marauder Flash</h2>
+<p><a href="https://github.com/SkeletonMan03/FZEasyMarauderFlash">This is the link to install the Marauder Flash</a></p>
+<p>It&#39;s recommended to flash the Marauder Flash to the flipper development using Linux or Mac OS.</p>
+<p> <a href="https://github.com/SkeletonMan03/FZEasyMarauderFlash/issues/33">Windows have an issue for quite sometime, so it&#39;s recommened to run on Linux or MacOS</a></p>
+<hr>
+<h2 id="install-wireshark">Install WireShark</h2>
+<p><a href="https://www.wireshark.org/">Wireshark Download</a></p>
+<h2 id="install-hashcat">Install Hashcat</h2>
+<p><a href="https://github.com/hashcat/hashcat/tags">Download the lastest release of it</a></p>
+<p>After that use 7zip to extract the file.</p>
+<p>Then open the command prompt and type in the following command:</p>
+<pre><code class="lang-bash"><span class="hljs-selector-tag">cd</span> <span class="hljs-selector-tag">C</span>:\<span class="hljs-selector-tag">Users</span>\%<span class="hljs-selector-tag">USERNAME</span>%\<span class="hljs-selector-tag">Downloads</span>\<span class="hljs-selector-tag">hashcat-6</span><span class="hljs-selector-class">.2</span><span class="hljs-selector-class">.4</span>
+</code></pre>
+<p>This will change the directory to the hashcat folder.</p>
+<h2 id="install-7zip">Install 7zip</h2>
+<p><a href="https://www.7-zip.org/download.html">Download 7zip</a></p>
+<h2 id="install-python-3-9-6">Install Python 3.9.6</h2>
+<p><a href="https://www.python.org/downloads/release/python-396/">Download Python 3.9.6</a></p>
+<p>Install this if you don&#39;t have it.</p>
+<h2 id="install-the-crack-passwords">Install the crack passwords</h2>
+<p>Huge (74 gig): <a href="https://h.acker.is/74gb-wordlist-released-princesspi7-4/">This large list of passwords</a>
+<br>
+Common: <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&amp;v=subLBPJ3IxU">Password list</a>
+<br></p>
+<h2 id="what-i-used-for-this-tutorial-https-wpa-sec-stanev-org-dict-cracked-txt-gz-v-sublbpj3ixu-">What I Used: <a href="https://wpa-sec.stanev.org/dict/cracked.txt.gz&amp;v=subLBPJ3IxU">For this tutorial</a></h2>
+<h1 id="execution">Execution</h1>
+<p>Great! Now that you have installed all the prerequisites, let&#39;s get started!</p>
+<h2 id="step-0-">Step 0:</h2>
+<p>Navigate to Applications ---&gt; GPIO ---&gt; [ESP32] Wifi Marauder</p>
+<video src="Image%20and%20Video/Recording%202023-07-12%20175619.mp4" controls title="Nev"></video>
+
+<h2 id="step-1-">Step 1:</h2>
+<p><img src="./Image%20and%20Video/Screenshot-20230712-175629.png" alt="Run AP"></p>
+<p>Scan your AP </p>
+<h2 id="step-2-">Step 2:</h2>
+<p>Select the AP you want to Deauth and Sniff</p>
+<p><img src="Image and Video/Screenshot-20230712-181816.png" alt="Alt text"></p>
+<h2 id="step-3-">Step 3:</h2>
+<p>Find your SSID and remember the number beside it.</p>
+<p><img src="Image and Video/Screenshot 2023-07-12 180501.png" alt="Alt text"></p>
+<h2 id="step-4-">Step 4:</h2>
+<p>Press on Select and Key in the number beside your SSID. Example: 1</p>
+<h2 id="step-5-">Step 5:</h2>
+<p>Before you press on the Deauth button, change your Sniff to raw, to make sure that you can sniff the handshake.</p>
+<video src="Image%20and%20Video/RAW%20and%20Deauther.mp4" controls title="Title"></video>
+
+<h2 id="step-6-">Step 6:</h2>
+<p>Get your pcap file from the flipper zero and open it with Wireshark.</p>
+<p>SD Card ---&gt; app_data ----&gt; marauder ---&gt; pcap ---&gt; Sniffraw_1.pcap</p>
+<video src="Image%20and%20Video/Recording75619.mp4" controls title="Title"></video>
+
+<h2 id="step-7-">Step 7:</h2>
+<p>Go click on the .pcap file and it will open up Wireshark. </p>
+<p>Type on the filter bar: <code>eapol</code></p>
+<p>You should have something like this: </p>
+<pre><code><span class="hljs-type">key</span>(Message <span class="hljs-number">1</span> of <span class="hljs-number">4</span>), <span class="hljs-type">key</span>(Message <span class="hljs-number">2</span> of <span class="hljs-number">4</span>),
+<span class="hljs-type">key</span>(Message <span class="hljs-number">3</span> of <span class="hljs-number">4</span>) and <span class="hljs-type">key</span>(Message <span class="hljs-number">4</span> of <span class="hljs-number">4</span>)
+</code></pre><video src="Image%20and%20Video/Eapol%20works.mp4" controls title="Title"></video>
+
+<h2 id="step-8-">Step 8:</h2>
+<p><a href="https://hashcat.net/cap2hashcat/">Go to this website and upload your .pcap file</a></p>
+<p>And download the .hc22000 file.</p>
+<video src="Image%20and%20Video/Use%20Hashcat%20website.mp4" controls title="Title"></video>
+
+<h2 id="step-9-">Step 9:</h2>
+<p>Drag the .hc22000 file into the hashcat folder.</p>
+<p>AND also the cracked.txt.gz file into the hashcat folder. (Depends on what you want to crack)</p>
+<p>(Make sure both of the files are in the same folder)</p>
+<p>Open up CMD and CD to the hashcat folder.</p>
+<p>After run this command</p>
+<pre><code class="lang-bash">hashcat -m <span class="hljs-number">22000</span> (your <span class="hljs-selector-class">.hc22000</span> file) (your cracked<span class="hljs-selector-class">.txt</span><span class="hljs-selector-class">.gz</span> file)
+</code></pre>
+<p>Example of the command</p>
+<pre><code class="lang-bash">hashcat -m <span class="hljs-number">22000</span> <span class="hljs-number">112313212</span><span class="hljs-selector-class">.hc22000</span> cracked<span class="hljs-selector-class">.txt</span><span class="hljs-selector-class">.gz</span>
+</code></pre>
+<p>Your password will be cracked in a few seconds or minutes depending on your computer and the password.</p>
+<video src="Image%20and%20Video/Password%20Cracked.mp4" controls title="Title"></video>
+
+
+<h1 id="conclusion">Conclusion</h1>
+<p>You can use this method to crack any WPA/WPA2 password. But it&#39;s not 100% guaranteed that you can crack the password. It depends on the password strength and your computer.</p>
+<p>Please do not use this method to crack other people&#39;s wifi password. This is for educational purposes only and do it on your own wifi!!!</p>
+
+    
+</body>
+</html>
