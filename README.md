@@ -45,7 +45,7 @@ It's recommended to flash the Marauder Flash to the flipper development using Li
 
  [Windows have an issue for quite sometime, so it's recommened to run on Linux or MacOS](https://github.com/SkeletonMan03/FZEasyMarauderFlash/issues/33)
 
-
+Make sure to chose option 2! That option will allow you to save the .pcap file to the SD card.
 
  ----------------------------------------
 
