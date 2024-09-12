@@ -3,7 +3,7 @@ This documentation is on how to crack a WPS/WPA2 encrypted wifi password using F
 
 Alright let's get started!
 
-# [View the website here! It's better!]([https://stepsisstuck.github.io/ESP32-with-Marauder-Flash/](https://stepsisstuck.github.io/ESP32-Wifi-Hacking/))
+# [View the website here! It's better!](https://stepsisstuck.github.io/ESP32-Wifi-Hacking/)
 # Table of Contents:
 - [Hello there!](#hello-there)
 - [View the website here! It's better!](#view-the-website-here-its-better)
