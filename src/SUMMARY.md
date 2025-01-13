@@ -12,8 +12,6 @@
 ## Conclusion
 - [Conclusion](./Guide/Conclusion.md)
 
-### License
+## License and Contributing
 - [License](./LICENSE)
-
-### Contributing
 - [Contributing](./CONTRIBUTING.md)
