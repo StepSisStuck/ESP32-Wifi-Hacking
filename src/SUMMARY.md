@@ -14,3 +14,6 @@
 
 ### License
 - [License](./LICENSE)
+
+### Contributing
+- [Contributing](./CONTRIBUTING.md)
