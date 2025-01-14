@@ -36,15 +36,6 @@ To set up the development environment for ESP32-Wifi-Hacking, follow these steps
    cd ESP32-Wifi-Hacking
    ```
 
-3. Install the necessary dependencies:
-   ```bash
-   # Add specific instructions for installing dependencies here
-   ```
-
-4. Build the project:
-   ```bash
-   # Add specific instructions for building the project here
-   ```
 
 ## Reporting Issues and Requesting Features
 
